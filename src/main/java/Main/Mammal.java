@@ -10,14 +10,16 @@ public abstract class Mammal implements Creature {
         return age;
     }
     public void setAge(int age) {
-        this.age = age;
+        if (age > 0)
+            this.age = age;
     }
 
     public int getWeight() {
         return weight;
     }
     public void setWeight(int weight) {
-        this.weight = weight;
+        if(weight > 0)
+            this.weight = weight;
     }
     public String getName() {
         return name;
@@ -29,14 +31,15 @@ public abstract class Mammal implements Creature {
         return gender;
     }
     public void setGender(String gender) {
-        this.gender = gender;
+        if(gender.equals("male") || gender.equals("female"))
+            this.gender = gender;
     }
 
     public Mammal(String name, String gender , int age, int weight) {
-        this.name = name;
-        this.gender = gender;
-        this.age = age;
-        this.weight = weight;
+        setName(name);
+        setGender(gender);
+        setAge(age);
+        setWeight(weight);
     }
 
     public abstract void move();
