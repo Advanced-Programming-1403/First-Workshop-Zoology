@@ -5,6 +5,10 @@ public abstract class Mammal implements Creature {
     public abstract void makeSound();
     @Override
     public void live() {
-        // TODO
+        System.out.println("Mammals are living");
+    }
+    @Override
+    public void breathe() {
+        System.out.println("Mammals breathe to be alive");
     }
 }
